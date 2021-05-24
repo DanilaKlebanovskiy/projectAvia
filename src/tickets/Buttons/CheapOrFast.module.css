@@ -1,0 +1,26 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+
+}
+
+.wrapper div{
+    text-align: center;
+    border: 1px solid #dfe5ec;
+    width: 168px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .cheap{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.wrapper .opti{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
