@@ -1,0 +1,19 @@
+import {connect} from "react-redux";
+import Tickets from "./Tickets";
+import {ticketsThunk} from "../redux/tickets_reducer/ticket_reducer";
+import React from "react";
+
+const TicketsContainer = (props) => {
+    console.log(props)
+    return (
+        <div>
+            <Tickets {...props}/>
+        </div>
+    )
+}
+
+const mapStateToProps = (state) => ({
+    tickets: state.tickets.tickets
+});
+
+export default connect(mapStateToProps, {ticketsThunk})(TicketsContainer)

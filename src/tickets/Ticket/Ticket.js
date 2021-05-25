@@ -4,6 +4,7 @@ let Ticket = () => {
     return (
 
             <div className={s.grid}>
+
                 <div className={s.price}>13400</div>
                 <div className={s.company}>company</div>
                 <div className={s.depature}>

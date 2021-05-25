@@ -1,33 +1,30 @@
 
-
-.grid{
+.grid {
     margin: 0 auto;
     width: 462px;
-    height : 144px;
+    height: 144px;
     display: grid;
     border-radius: 5px;
-    grid-template-columns: 1fr 1fr ;
-    grid-auto-rows: 1fr 1fr ;
-    grid-template-areas:
-            "price comp comp"
-            "h t p"
-            "hb tbb cb";
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr 1fr;
+    grid-template-areas: "price comp comp" "h t p" "hb tbb cb";
     padding: 20px;
     background-color: #ffffff;
-    box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.22)
+    box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.13)
 }
 
 
-.price{
+.price {
 
     grid-area: price;
     color: #2196f3;
     font-family: 'Open Sans', sans-serif;
     font-size: 24px;
 
+
 }
 
-.company{
+.company {
     grid-area: comp;
     text-align: right;
 
@@ -36,21 +33,139 @@
 
 .depature {
     grid-area: h;
-
 }
+
+.depature div:nth-child(1){
+    color : #a0b0b9;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+}
+
+.depature div:nth-child(2){
+    color : #4a4a4a;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
 .travell {
     grid-area: t;
 }
+
+.travell div:nth-child(1){
+    color : #a0b0b9;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+}
+
+.travell div:nth-child(2){
+    color : #4a4a4a;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+
+
 .peresadka {
     grid-area: p;
 }
 
+.peresadka div:nth-child(1){
+    color : #a0b0b9;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+}
+
+.peresadka div:nth-child(2){
+    color : #4a4a4a;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+
+
 .depatureback {
     grid-area: hb;
 }
+
+.depatureback div:nth-child(1){
+    color : #a0b0b9;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+}
+
+.depatureback div:nth-child(2){
+    color : #4a4a4a;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
 .travellback {
     grid-area: tbb;
 }
-.peresadkaback{
+
+.travellback div:nth-child(1){
+    color : #a0b0b9;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+}
+.travellback div:nth-child(2){
+    color : #4a4a4a;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.peresadkaback {
     grid-area: cb;
+}
+
+.peresadkaback div:nth-child(1){
+    color : #a0b0b9;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+}
+
+.peresadkaback div:nth-child(2){
+    color : #4a4a4a;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
 }

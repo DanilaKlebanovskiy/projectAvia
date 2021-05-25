@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
 .page {
-    background-color: #e5e5e5;
+    background-color: #F3F7FA;
 }
 
 .container {
@@ -26,8 +26,6 @@
     align-items: center;
     justify-content: center;
 }
-.sidebar {
-    grid-area: m;
-}
+
 
 
