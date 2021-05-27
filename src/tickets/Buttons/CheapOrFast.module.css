@@ -6,6 +6,11 @@
 
 }
 
+.wrapper div:hover{
+    background-color: #2196f3;
+    color: white
+}
+
 .wrapper div{
     text-align: center;
     border: 1px solid #dfe5ec;
@@ -28,9 +33,6 @@
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 0.5px;
-
-
-
 }
 
 .wrapper .opti{

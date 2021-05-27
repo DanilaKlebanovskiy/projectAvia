@@ -1,0 +1,72 @@
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.depature div:nth-child(1){
+    color : #a0b0b9;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+}
+
+.depature div:nth-child(2){
+    color : #4a4a4a;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.travell {
+    grid-area: t;
+}
+
+.travell div:nth-child(1){
+    color : #a0b0b9;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+}
+
+.travell div:nth-child(2){
+    color : #4a4a4a;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+
+
+.peresadka {
+    grid-area: p;
+}
+
+.peresadka div:nth-child(1){
+    color : #a0b0b9;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+}
+
+.peresadka div:nth-child(2){
+    color : #4a4a4a;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+

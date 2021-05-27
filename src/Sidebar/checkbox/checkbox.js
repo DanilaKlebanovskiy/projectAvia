@@ -2,21 +2,22 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import s from "./checkbox.module.css"
 
+
 const checkboxData = [
     { value: "noTransfers", label: "Без пересадок" },
     { value: "oneTransfer", label: "1 пересадка" },
     { value: "twoTransfers", label: "2 пересадки" },
     { value: "threeTransfers", label: "3 пересадки" }
 ];
+const selectAllData = checkboxData.map((checkbox) => checkbox.value);
 
 export default function Test() {
-    const selectAllData = checkboxData.map((checkbox) => checkbox.value);
+
 
     return (
         <div>
             <Formik
                 initialValues={{ numbers: [], selectAll: false }}
-                onSubmit={(values) => console.log(values)}
             >
                 {({ values, setFieldValue }) => (
                     <Form>
@@ -52,12 +53,32 @@ export default function Test() {
                                 </div>
                             ))}
                         </div>
-{/*
+                        <div>
+                            <Field name="firstName"
+                                   type="checkbox">
+                                {( props ) => (
+
+                                    <CheckboxField {...props} />
+                                )}
+                            </Field>
+                        </div>
+{
                         <pre>{JSON.stringify(values, null, 2)}</pre>
-*/}
+}
                     </Form>
                 )}
             </Formik>
         </div>
     );
+}
+
+const CheckboxField = (props) => {
+    console.log(props)
+    return (
+        <div onClick={props.field.onChange}>
+            <div className={s.checkBox}>sddsd{props.field.checked.toString()}</div>
+            <input type="checkbox" {...props.field}/>
+            <div className={s.numberOftransfers}></div>
+        </div>
+    )
 }

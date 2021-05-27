@@ -3,41 +3,37 @@ import {ticketsApi} from "../../api/api";
 const SET_TICKETS = "SET_TICKETS"
 
 let initialState = {
-    tickets : []
+    tickets: [],
+    fastest: [],
+    cheapest:[],
+    opti: []
 }
 
 const TicketsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_TICKETS :
             return {
-                ...state
+                ...state, tickets: [...action.ticketsMas]
             }
         default:
             return state;
     }
 }
 
-export const TicketsActionCreator = (tickets) => ({type: SET_TICKETS, tickets})
-
+export const TicketsActionCreator = (ticketsMas) => ({type: SET_TICKETS, ticketsMas})
 
 export const ticketsThunk = () => {
-    return async (dispatch) => {
-        try{
-            const response  = await ticketsApi.getSearch()
-            console.log(response.data.searchId)
+    return async function test(dispatch) {
+        try {
+            const response = await ticketsApi.getSearch()
             const {data} = await ticketsApi.getTickets(response.data.searchId)
-        } catch(e) {
-            await ticketsThunk()
+            dispatch(TicketsActionCreator(data.tickets))
+        } catch (e) {
+            if (e.message === "Request failed with status code 500")
+                await test(dispatch)
         }
-
-
     }
 }
 
-
-
-
-
-// export const setTicketsActionCreator = (searchValue) => ({type: SET_TICKETS, searchValue})
 
 export default TicketsReducer

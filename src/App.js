@@ -1,24 +1,12 @@
 import './App.css';
-import {ticketsApi} from "./api/api";
-import {useEffect} from "react";
+
 import logPic from "../src/img/logo.svg"
 import Sidebar from "./Sidebar/Sidebar";
 import TicketsContainer from "./tickets/TicketsContainer";
 import {Provider} from "react-redux";
+import store from "../src/redux/reduxStore"
 
 function App() {
-    // useEffect(() => {
-    //     Search()
-    // }, [])
-    // const Search = async () => {
-    //     try {
-    //         const response = await ticketsApi.getSearch()
-    //         console.log(response.data.searchId)
-    //         const {data} = await ticketsApi.getTickets(response.data.searchId)
-    //     } catch (e) {
-    //         await Search()
-    //     }
-    // }
 
     return (
         <Provider store={store}>
