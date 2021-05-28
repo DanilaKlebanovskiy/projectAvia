@@ -3,12 +3,13 @@ import classNames from 'classnames'
 
 
 
-const CheapOrFast = () => {
+const CheapOrFast = (props) => {
+    console.log(props)
     const isCheapest = () => {
-        //actionCreatorFastest
+        
     }
     const isFastest = () => {
-
+       
     }
     const isOpti = () => {
 

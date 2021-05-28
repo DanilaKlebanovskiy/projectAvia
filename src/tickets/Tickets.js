@@ -6,6 +6,7 @@ import {ticketsThunk} from "../redux/tickets_reducer/ticket_reducer";
 import Direction from "./Ticket/Direction/Direction";
 
 const Tickets = (props) => {
+    
     let toggle = true;
 
     useEffect(() => { props.ticketsThunk() },[])
@@ -34,7 +35,7 @@ const Tickets = (props) => {
 
     return (
         <div className={s.tickets}>
-            <CheapOrFast/>
+            <CheapOrFast test = {props.test}/>
             <div>{newTicket}</div>
         </div>
     )
