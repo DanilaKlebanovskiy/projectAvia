@@ -1,45 +1,52 @@
 import { ticketsApi } from "../../api/api";
+import {filterTickets, sortTickets} from "../../utils/utils";
 
 const SET_TICKETS = "SET_TICKETS"
-const SET_FAST = "SET_FAST"
-const SET_CHEAP = "SET_CHEAP"
-const SET_OPTI = "SET_OPTI"
+const SORT_TICKETS = "SORT_TICKETS"
+const FILTER_TICKETS = "FILTER_TICKETS"
+const SET_FILTER_METHODS = "SET_FILTER_METHODS"
+
 
 
 let initialState = {
     tickets: [],
-    menu: ""
+    sortState : null,
+    filteredTickets: [],
+    filterMethod: [],
+    ticketsToShow: []
 }
 
 const TicketsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_TICKETS:
-            return {
-                ...state, tickets: [...action.ticketsMas]
-            }
-        case SET_FAST:
-            return {
-                ...state, menu : action.isFast
-            }
-        case SET_CHEAP:
-            return {
-                ...state
-            }
-        case SET_OPTI:
-            return {
-                ...state
-            }
 
+            return {
+                ...state, tickets: [...action.ticketsMas], ticketsToShow: [...action.ticketsMas]
+            }
+        case SORT_TICKETS:
+            const sortedTickets = sortTickets(state.ticketsToShow ,action.sortMethod)
+            return {
+                ...state, sortState : action.sortMethod, ticketsToShow: sortedTickets
+            }
+        case FILTER_TICKETS:
+            const filteredTickets = filterTickets(state.tickets ,action.filterMethod)
+            return {
+                ...state, sortState : action.filterMethod, filteredTickets: filteredTickets
+            }
+        case SET_FILTER_METHODS:
+            return {
+                ...state, filterMethod: [...state.filterMethod, action.filterMethod]
+            }
         default:
             return state;
     }
 }
 
-export const actionCreatorFastest = (isFast) => ({ type: SET_FAST, isFast })
+export const sortTicketsAC = (sortMethod) => ({ type: SORT_TICKETS,  sortMethod})
+export const filterTicketsAC = (filterMethod) => ({ type: FILTER_TICKETS,  filterMethod})
+export const setFilterMethodAC = (filterMethod) => ({type: SET_FILTER_METHODS, filterMethod})
 
-export const actionCreatorCheapest = (isCheap) => ({ type: SET_CHEAP, isCheap })
 
-export const actionCreatorOpti = (isOpti) => ({ type: SET_OPTI, isOpti })
 
 
 export const TicketsActionCreator = (ticketsMas) => ({ type: SET_TICKETS, ticketsMas })

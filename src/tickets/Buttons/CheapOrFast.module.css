@@ -6,7 +6,12 @@
 
 }
 
-.wrapper div:hover{
+.wrapper .active{
+    background-color: #2196f3;
+    color: white
+}
+
+.wrapper div:hover,.wrapper .active{
     background-color: #2196f3;
     color: white
 }
@@ -39,3 +44,6 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+
+

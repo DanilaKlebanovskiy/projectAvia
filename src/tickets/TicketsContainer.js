@@ -1,8 +1,11 @@
 import {connect} from "react-redux";
 import Tickets from "./Tickets";
-import {ticketsThunk} from "../redux/tickets_reducer/ticket_reducer";
+import {
+    setFilterMethodAC,
+    sortTicketsAC,
+    ticketsThunk
+} from "../redux/tickets_reducer/ticket_reducer";
 import React, {useEffect} from "react";
-import {actionCreatorFastest} from "../redux/tickets_reducer/ticket_reducer"
 
 const TicketsContainer = (props) => {
 
@@ -14,14 +17,16 @@ const TicketsContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    tickets: state.tickets.tickets
+    tickets: state.tickets.ticketsToShow,
+    sortState: state.tickets.sortState
+
 });
 
-function test(dispatch) {
-    return {
-        isFastest: (tog) => dispatch(actionCreatorFastest(tog)),
-    
-    }
-  }
+const mapDispatchToProps = (dispatch) => ({
+    sortTickets : (method) => dispatch(sortTicketsAC(method)),
+    ticketsThunk: () => dispatch(ticketsThunk()),
+    setFilterMethod: (method) => dispatch(setFilterMethodAC(method))
+})
 
-export default connect(mapStateToProps, {ticketsThunk,test})(TicketsContainer)
+
+export default connect(mapStateToProps, mapDispatchToProps)(TicketsContainer)

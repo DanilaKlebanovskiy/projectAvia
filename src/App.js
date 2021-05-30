@@ -1,10 +1,10 @@
 import './App.css';
 
 import logPic from "../src/img/logo.svg"
-import Sidebar from "./Sidebar/Sidebar";
 import TicketsContainer from "./tickets/TicketsContainer";
 import {Provider} from "react-redux";
 import store from "../src/redux/reduxStore"
+import SidebarContainer from "./Sidebar/SidebarContainer";
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
             <div className="page">
                 <div className="container">
                     <div className="logo"><img className="picture" src={logPic}/></div>
-                    <div className="sidebar"><Sidebar/></div>
+                    <div className="sidebar"><SidebarContainer/></div>
                     <div className="tickets"><TicketsContainer/></div>
                 </div>
             </div>
