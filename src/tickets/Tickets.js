@@ -6,20 +6,17 @@ import MoreTickets from "./MoreTickets/MoreTickets";
 
 const DELTA = 5;
 const Tickets = (props) => {
-
     useEffect(() => {
         props.ticketsThunk()
     }, [])
     const [ticketsToShow, showMore] = useState(DELTA)
 
     const sliceArray = props.tickets.slice(0, ticketsToShow)
-    const Tickets = [...sliceArray].map((element) => <Ticket carrier={element.carrier}
+    const Tickets = [...sliceArray].map((element, id) => <Ticket key= {id} carrier={element.carrier}
                                                              price={element.price}
                                                              segments={element.segments}
 
     />)
-
-
 
 
     // const oneTransfer = [...props.tickets].filter((ticket) => {return ((ticket.segments[0].stops.length + ticket.segments[1].stops.length) === 1)})
@@ -29,7 +26,7 @@ const Tickets = (props) => {
         <div className={s.tickets}>
             <CheapOrFast sortState={props.sortState} sortTickets={props.sortTickets}/>
             <div>{Tickets}</div>
-            <MoreTickets showMore={() => showMore(ticketsToShow + DELTA)}/>
+            {!!props.tickets.length ? <MoreTickets showMore={() => showMore(ticketsToShow + DELTA)} /> : <div>Билетов нет</div> }
         </div>
     )
 }

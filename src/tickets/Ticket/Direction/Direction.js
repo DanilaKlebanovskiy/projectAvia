@@ -6,20 +6,16 @@ import React from "react";
 const Direction = (props) => {
     const parseDate = Date.parse(props.date)
 
-    let Xmas95 = new Date(parseDate);
-    let Xmasnext = new Date(parseDate + props.duration)
-    console.log(Xmas95)
-    console.log(Xmasnext)
-    let hours = Xmas95.getHours();
-    let minutes = Xmas95.getMinutes()
-    // let nexthours =
+    let sum = parseDate + props.duration
 
-    console.log(hours, minutes);
+    let Xmas95 = new Date(parseDate);
+    let Xmasnext = new Date( props.duration*1000)
+    console.log(Xmasnext)
 
     return (<div className={s.wrapper}>
             <div className={s.depature}>
                 <div>{props.origin}-{props.destination}</div>
-                <div>{Xmas95.getHours()}:{Xmas95.getMinutes()} {Xmasnext.getHours()}:{Xmasnext.getMinutes()} </div>
+                <div>{Xmas95.getHours()}:{Xmas95.getMinutes()} {/*- {Xmasnext.getHours()}:{Xmasnext.getMinutes()} */} </div>
             </div>
             <div className={s.travell}>
                 <div>В ПУТИ</div>

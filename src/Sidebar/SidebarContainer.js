@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import {
-    setFilterMethodAC,
+    filterTicketsAC, resetTicketsAC,
+    setFilterMethodAC, sortTicketsAC,
 } from "../redux/tickets_reducer/ticket_reducer";
 import React from "react";
 import Sidebar from "./Sidebar";
@@ -14,11 +15,13 @@ const SidebarContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    filterMethod: state.tickets.filterMethod
+    filterForm : state.tickets.filterForm,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    setFilterMethod: (method) => dispatch(setFilterMethodAC(method))
+    filterTickets : () => dispatch(filterTicketsAC()),
+    setFilterMethod: (method) => dispatch(setFilterMethodAC(method)),
+    resetTickets: () => dispatch(resetTicketsAC())
 })
 
 

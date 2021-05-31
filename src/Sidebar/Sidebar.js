@@ -2,7 +2,6 @@ import s from "./Sidebar.module.css"
 import Test from "./checkbox/checkbox";
 
 const Sidebar = (props) => {
-    console.log(props)
     return (
         <div className={s.sidebar_area}>
             <div className={s.quantity}>Количество пересадок</div>

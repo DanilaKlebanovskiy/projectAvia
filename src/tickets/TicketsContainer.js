@@ -18,7 +18,7 @@ const TicketsContainer = (props) => {
 
 const mapStateToProps = (state) => ({
     tickets: state.tickets.ticketsToShow,
-    sortState: state.tickets.sortState
+    sortState: state.tickets.sortState,
 
 });
 

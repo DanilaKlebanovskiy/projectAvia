@@ -5,7 +5,6 @@ import {SORT_STATES} from "../../commons/constants"
 
 
 const CheapOrFast = (props) => {
-    console.log(props)
 
     return (<div className={s.wrapper}>
         <div className={classNames(s.cheap,{active : SORT_STATES.cheap === props.sortState}, s.style )} onClick={() => props.sortTickets(SORT_STATES.cheap)}>Самый дешевый</div>

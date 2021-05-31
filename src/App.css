@@ -7,7 +7,6 @@
 .container {
     width: 754px;
     margin: 0 auto;
-    height: 1500px;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 232px 502px;

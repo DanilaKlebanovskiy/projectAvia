@@ -5,7 +5,6 @@ export const SORT_STATES = {
 }
 
 export const FILTER_STATES = {
-    all : "all",
     without : 0,
     oneTransfer: 1,
     twoTransfers: 2,

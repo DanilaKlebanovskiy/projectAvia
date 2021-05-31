@@ -4,7 +4,7 @@ import thunkMiddleware from 'redux-thunk'
 import React from "react";
 
 const reducers = combineReducers({
-    tickets : TicketsReducer
+    tickets : TicketsReducer,
 })
 
 const store = createStore(reducers,applyMiddleware(thunkMiddleware))

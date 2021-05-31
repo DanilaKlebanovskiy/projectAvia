@@ -4,7 +4,7 @@ import React from "react";
 
 
 const Ticket = (props) => {
-    console.log(props.segments)
+    console.log(props.segments,"segments")
     const newSegments = [...props.segments].map((segm) => <Direction origin={segm.origin} date={segm.date}
                                                                      stops={segm.stops} destination={segm.destination} duration={segm.duration}/>)
     const imgCarrier = `http://pics.avs.io/99/36/%7B${props.carrier}%7D.png`

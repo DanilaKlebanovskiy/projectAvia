@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Formik, Form, Field} from "formik";
 import s from "./checkbox.module.css"
 import {FILTER_STATES} from "../../commons/constants"
+import classNames from "classnames";
 
 // const checkboxData = [
 //     {value: "noTransfers", label: "Без пересадок"},
@@ -11,37 +12,48 @@ import {FILTER_STATES} from "../../commons/constants"
 // ];
 // const selectAllData = checkboxData.map((checkbox) => checkbox.value);
 
-export default function Test(props) {
-    console.log(props,"sidebar")
+export default function Test({filterForm,resetTickets,filterTickets,setFilterMethod}) {
+    const areAllchecked = filterForm.without && filterForm.oneTransfer && filterForm.twoTransfers && filterForm.threeTransfers
+
+    useEffect(() => {
+        if (areAllchecked) {
+           resetTickets()
+        } else {
+            filterTickets()
+        }
+    }, [filterForm.without, filterForm.oneTransfer, filterForm.twoTransfers, filterForm.threeTransfers])
     return (<ul>
             <li>
                 <label>
-                    <input type="checkbox" onClick={() => props.setFilterMethod(111)}/>
+                    <input  type="checkbox" checked={areAllchecked} onClick={() => setFilterMethod("all")}/>
                     Все
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="checkbox" onClick={() => props.setFilterMethod(FILTER_STATES.without)}/>
+                    <input type="checkbox" checked={filterForm.without} onClick={() => setFilterMethod("without")}/>
                     Без пересадок
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="checkbox" onClick={() => props.setFilterMethod(FILTER_STATES.oneTransfer)}/>
+                    <input type="checkbox" checked={filterForm.oneTransfer}
+                           onClick={() => setFilterMethod("oneTransfer")}/>
                     1 переседка
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="checkbox" onClick={() => props.setFilterMethod(FILTER_STATES.twoTransfers)}/>
-                    2 переседка
+                    <input type="checkbox" checked={filterForm.twoTransfers}
+                           onClick={() => setFilterMethod("twoTransfers")}/>
+                    2 переседки
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="checkbox" onClick={() => props.setFilterMethod(FILTER_STATES.threeTransfers)}/>
-                    3 переседка
+                    <input type="checkbox" checked={filterForm.threeTransfers}
+                           onClick={() => setFilterMethod("threeTransfers")}/>
+                    3 переседки
                 </label>
             </li>
         </ul>
