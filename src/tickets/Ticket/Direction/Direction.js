@@ -1,28 +1,23 @@
 import s from "./Direction.module.css";
 import React from "react";
-
+import {formatTimeDuration, formatTimePeriod} from "../../../utils/FormatData";
 
 
 const Direction = (props) => {
-    const parseDate = Date.parse(props.date)
 
-    let sum = parseDate + props.duration
-
-    let Xmas95 = new Date(parseDate);
-    let Xmasnext = new Date( props.duration*1000)
-    console.log(Xmasnext)
 
     return (<div className={s.wrapper}>
             <div className={s.depature}>
                 <div>{props.origin}-{props.destination}</div>
-                <div>{Xmas95.getHours()}:{Xmas95.getMinutes()} {/*- {Xmasnext.getHours()}:{Xmasnext.getMinutes()} */} </div>
+                <div>{formatTimePeriod(props.date, props.duration)}</div>
             </div>
             <div className={s.travell}>
                 <div>В ПУТИ</div>
-                <div>{Math.floor(props.duration/60)} ч {props.duration % 60} м</div>
+                <div>{formatTimeDuration(props.duration)}</div>
             </div>
             <div className={s.peresadka}>
-                <div>{props.stops.length === 0 ? <div>прямой рейс</div> : <div>{props.stops.length} пересадки</div>}</div>
+                <div>{props.stops.length === 0 ? <div>прямой рейс</div> :
+                    <div>{props.stops.length} пересадки</div>}</div>
                 <div>{props.stops.join(",")}</div>
             </div>
         </div>
